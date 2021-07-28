@@ -47,3 +47,20 @@ body{
         color: white;
     }
 }
+
+.cover-wrapper{
+    .cover{
+        height: 50vh;
+        overflow: hidden    ;
+        .cover-image{
+            img{
+                object-fit: cover;
+            }
+        }
+        .cover-overlay{
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(#ffffff00, $black);
+        }
+    }
+}

@@ -4,5 +4,14 @@
 
 
 {% block content %}
-<h2>Content</h2>
+
+<div class="cover-wrapper w-100">
+    <div class="cover position-relative">
+        <div class="cover-image position-absolute w-100">
+            <img src="{% static 'img/backdrop.jpg'%}" alt="" class="img-fluid w-100">
+        </div>
+        <div class="cover-overlay position-absolute"></div>
+    </div>
+</div>
+
 {%endblock%}

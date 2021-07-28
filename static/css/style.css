@@ -47,4 +47,21 @@ body {
 .navbar .navbar-toggler-icon {
   color: white;
 }
+
+.cover-wrapper .cover {
+  height: 50vh;
+  overflow: hidden;
+}
+
+.cover-wrapper .cover .cover-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cover-wrapper .cover .cover-overlay {
+  height: 100%;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff00), to(#333333));
+  background-image: linear-gradient(#ffffff00, #333333);
+}
 /*# sourceMappingURL=style.css.map */
