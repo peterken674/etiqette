@@ -1,4 +1,50 @@
-* {
-  color: red;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
+*, html {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif !important;
+  border-radius: 0 !important;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+}
+
+.navbar {
+  background-color: #333333 !important;
+}
+
+.navbar .navbar-brand {
+  font-size: 3rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #ffffff !important;
+}
+
+.navbar .navbar-brand span {
+  color: #fff11e;
+}
+
+.navbar .collapse .btn {
+  color: #fff11e;
+  outline: 0.5px solid #fff11e;
+}
+
+.navbar a {
+  color: #ffffff !important;
+}
+
+.navbar .dropdown-menu a {
+  color: #333333 !important;
+}
+
+.navbar .navbar-toggler-icon {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
