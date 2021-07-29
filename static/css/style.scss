@@ -34,7 +34,13 @@ body{
     .collapse{
         .btn{
             color: $yellow;
-            outline:.5px solid $yellow;
+            outline: none;
+            border:.5px solid $yellow;
+            &:active, &:hover{
+                background-color: $yellow;
+                color: $black;
+                outline: none;
+            }
         }
     }
     a{
@@ -161,6 +167,7 @@ body{
     }
 }
 footer{
-    background-color: #fff01e94;
+    background-image: linear-gradient(#fff01e00, $black);
     color: $white;
+    height: 50px;
 }

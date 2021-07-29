@@ -36,7 +36,14 @@ body {
 
 .navbar .collapse .btn {
   color: #fff11e;
-  outline: 0.5px solid #fff11e;
+  outline: none;
+  border: 0.5px solid #fff11e;
+}
+
+.navbar .collapse .btn:active, .navbar .collapse .btn:hover {
+  background-color: #fff11e;
+  color: #333333;
+  outline: none;
 }
 
 .navbar a {
@@ -178,7 +185,9 @@ body {
 }
 
 footer {
-  background-color: #fff01e94;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff01e00), to(#333333));
+  background-image: linear-gradient(#fff01e00, #333333);
   color: #ffffff;
+  height: 50px;
 }
 /*# sourceMappingURL=style.css.map */
