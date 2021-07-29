@@ -9,14 +9,16 @@ $blue: #45b0e6;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
     border-radius: 0 !important;
+    transition: 300ms;
 }
 html{
     font-size: 16px;
 }
 body{
     width: 100%;
+    background-color: #333333;
 }
 .navbar{
     background-color: $black !important;
@@ -48,6 +50,11 @@ body{
     }
 }
 
+#content{
+    overflow-y: auto !important;
+    padding-bottom: 3rem;
+}
+
 .cover-wrapper{
     .cover{
         height: 50vh;
@@ -60,7 +67,100 @@ body{
         .cover-overlay{
             height: 100%;
             width: 100%;
-            background-image: linear-gradient(#ffffff00, $black);
+            background-image: linear-gradient(#33333369, $black);
+            padding-top: 10rem;
+
+            p{
+                max-width: 1000px;
+            }
+
+            
+            p.title{
+                color: $white;
+                font-size: 3rem;
+                font-weight: 700;
+                span{
+                    color: $yellow;
+                }
+            }
+            p.desc{
+                color: $white;
+                text-align: left;
+                font-size: 1.25rem;
+            }
         }
     }
+    .movies-section{
+        color: $white;
+        font-weight: 700;
+        font-size: 1.5rem;
+        border-bottom: 2px solid $yellow;
+    }
+}
+
+.movies{
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem;
+    flex-wrap: wrap;
+    padding-left: auto;
+    .single-movie{
+        height: 20rem;
+        width: 15rem;
+        overflow: hidden;
+        margin: 0 auto;
+        &:hover{
+           .overlay{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 0;
+                background-image: linear-gradient(#33333300, #333333);
+                border: 3px solid $yellow;
+           }
+        }
+        
+        .poster{
+            height: inherit;
+            width: inherit;
+            border-radius: 1rem !important;
+            overflow: hidden;
+            
+            img{
+                min-height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .overlay{
+            display: none;
+            color: $yellow;
+            font-size: 3rem;
+            font-weight: 900;
+            height: inherit;
+            width: inherit;
+            margin-top: 18rem;
+            border-radius: 1rem !important;
+            overflow: hidden;
+            transition: 300ms;
+        }
+    }
+    .details{
+        .movie-title{
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: $yellow;
+            margin-top: .5rem;
+        }
+        .small-details{
+            color: white;
+            font-size: .8rem;
+            font-weight: 500;
+
+        }
+    }
+}
+footer{
+    background-color: #fff01e94;
+    color: $white;
 }
