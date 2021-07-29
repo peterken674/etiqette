@@ -236,7 +236,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #9a9c92;
+  background-color: #333333;
   border-radius: 1rem !important;
   -webkit-box-shadow: 0 1px 50px -10px black;
           box-shadow: 0 1px 50px -10px black;

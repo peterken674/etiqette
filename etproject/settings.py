@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from typing import DefaultDict
 from decouple import config, Csv
 import os
 
@@ -159,3 +160,6 @@ cloudinary.config(
   api_key = config('API_KEY'), 
   api_secret = config('API_SECRET') 
 )
+
+TMDB_API_KEY = config('TMDB_API_KEY', default='')
+MOVIE_API_BASE_URL=config('MOVIE_API_BASE_URL', default='')

@@ -17,35 +17,23 @@
     </div>
     <p class="movies-section mx-5 pb-5">Now Showing</p>
     <div class="movies mx-5">
+        {%for movie in movies%}
         <div class="movie">
             <div class="single-movie">
                 <div class="poster position-absolute">
-                    <img src="{% static 'img/backdrop2.jpg'%}" alt="" class="img-fluid">
+                    <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="" class="img-fluid">
                 </div>
                 <a class="overlay position-absolute" href="{% url 'movie'%}">
-                    7.5
+                    {{movie.vote_average}}
                 </a>
             </div>
             <div class="details">
-                <p class="movie-title">The Awakening</p>
-                <p class="small-details">16 | 107min | English | Imax 3D</p>
+                <p class="movie-title">{{movie.title | truncatechars:24}}</p>
+                <p class="small-details">{% if adult %}Adult{%else%}GE{%endif%} | {{movie.runtime}}min |
+                    {{movie.original_language}} | Imax 3D</p>
             </div>
         </div>
-        
-        <div class="movie">
-            <div class="single-movie">
-                <div class="poster position-absolute">
-                    <img src="{% static 'img/backdrop1.jpg'%}" alt="" class="img-fluid">
-                </div>
-                <a class="overlay position-absolute" href="#">
-                    8.6
-                </a>
-            </div>
-            <div class="details">
-                <p class="movie-title">Straightening</p>
-                <p class="small-details">16 | 107min | English | Imax 3D</p>
-            </div>
-        </div>
+        {%endfor%}
         
     </div>
 </div>

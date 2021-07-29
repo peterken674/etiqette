@@ -1,8 +1,14 @@
 from django.shortcuts import render
+from .request import get_movies
+from django.conf import settings
 
 def index(request):
 
-    return render(request, 'etiqette/index.html')
+    movies = get_movies('now_playing')
+
+    context = {'movies':movies}
+
+    return render(request, 'etiqette/index.html', context)
 
 def single_movie(request):
 
@@ -15,3 +21,6 @@ def single_cinema(request):
 def book_ticket(request):
 
     return render(request, 'etiqette/book.html')
+
+
+
