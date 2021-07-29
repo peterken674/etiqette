@@ -23,7 +23,7 @@
                 <div class="poster position-absolute">
                     <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="" class="img-fluid">
                 </div>
-                <a class="overlay position-absolute" href="{% url 'movie'%}">
+                <a class="overlay position-absolute" href="{% url 'movie' movie_id=movie.movie_id %}">
                     {{movie.vote_average}}
                 </a>
             </div>

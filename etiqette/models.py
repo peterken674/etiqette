@@ -1,7 +1,7 @@
 from django.db import models
 
 class Movie:
-    def __init__(self, movie_id, adult, backdrop_path, overview, poster_path, title, vote_average, vote_count, release_date, runtime, original_language):
+    def __init__(self, movie_id, adult, backdrop_path, overview, poster_path, title, vote_average, vote_count, release_date, runtime, original_language, genre, trailer):
         self.movie_id = movie_id
         self.adult = adult
         self.backdrop_path = backdrop_path
@@ -13,3 +13,5 @@ class Movie:
         self.release_date = release_date
         self.runtime = runtime
         self.original_language = original_language
+        self.genre = genre
+        self.trailer = trailer

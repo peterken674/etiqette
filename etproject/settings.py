@@ -163,3 +163,4 @@ cloudinary.config(
 
 TMDB_API_KEY = config('TMDB_API_KEY', default='')
 MOVIE_API_BASE_URL=config('MOVIE_API_BASE_URL', default='')
+SINGLE_MOVIE_API_BASE_URL=config('SINGLE_MOVIE_API_BASE_URL', default='')

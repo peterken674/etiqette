@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .request import get_movies
+from .request import get_movies, get_movie
 from django.conf import settings
 
 def index(request):
@@ -10,9 +10,14 @@ def index(request):
 
     return render(request, 'etiqette/index.html', context)
 
-def single_movie(request):
+def single_movie(request, movie_id):
 
-    return render(request, 'etiqette/movie.html')
+    movie = get_movie(movie_id)
+    context = {
+        'movie':movie
+    }
+
+    return render(request, 'etiqette/movie.html', context)
 
 def single_cinema(request):
 
