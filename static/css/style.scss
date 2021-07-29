@@ -63,7 +63,7 @@ a, a:hover{
     }
 }
 
-#content{
+#content, .content{
     overflow-y: auto !important;
     padding-bottom: 3rem;
 }
@@ -180,6 +180,19 @@ footer{
 }
 
 .content{
+    .bg{
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: -101;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            opacity: .1;
+        }
+    }
     .content-wrapper{
         .movie-card{
             display: flex;
@@ -237,6 +250,42 @@ footer{
                         line-height: 1;
                         font-weight: 700;
                         color: $yellow;
+                    }
+                }
+            }
+        }
+
+        .dividing-line{
+            display: flex;
+            flex-grow: 1;
+            border-top: 1px solid $yellow;
+        }
+        .cinemas{
+            .cinemas-title{
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+            .cinemas-list{
+                .cinema-name{
+                    color: $yellow;
+                    font-weight: 600;
+                }
+                .show{
+                    border: 1px solid $yellow;
+                    border-radius: 1rem !important;
+                    color: $white;
+                    &:hover{
+                        background-color: #9a9c92;
+                        transform: scale(1.025);
+                    }
+                    &>*{
+                        line-height: 1 !important;
+                        text-align: center;
+                        font-size: .8rem;
+                    }
+                    .showtime{
+                        font-size: 1.1rem;
+                        font-weight: 600;
                     }
                 }
             }
