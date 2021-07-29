@@ -1,4 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
+* {
+  -webkit-transition: 300ms !important;
+  transition: 300ms !important;
+}
+
 *, html {
   padding: 0;
   margin: 0;
@@ -6,8 +11,6 @@
           box-sizing: border-box;
   font-family: 'Open Sans', sans-serif !important;
   border-radius: 0 !important;
-  -webkit-transition: 300ms;
-  transition: 300ms;
 }
 
 html {
@@ -17,6 +20,7 @@ html {
 body {
   width: 100%;
   background-color: #333333;
+  color: white;
 }
 
 a, a:hover {
@@ -192,5 +196,98 @@ footer {
   background-image: linear-gradient(#fff01e00, #333333);
   color: #ffffff;
   height: 50px;
+}
+
+.content .content-wrapper .movie-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1.5rem;
+  background-color: #9a9c92;
+  border-radius: 1rem !important;
+  -webkit-box-shadow: 0 1px 50px -10px black;
+          box-shadow: 0 1px 50px -10px black;
+  overflow: hidden;
+}
+
+.content .content-wrapper .movie-card .poster {
+  height: inherit;
+  width: 30%;
+}
+
+.content .content-wrapper .movie-card .poster .poster-image {
+  height: 100%;
+  width: 100%;
+  min-width: 300px;
+}
+
+.content .content-wrapper .movie-card .poster .poster-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.content .content-wrapper .movie-card .poster .poster-overlay {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.content .content-wrapper .movie-card .poster .poster-overlay a {
+  color: #ffffff;
+  font-size: 4rem;
+}
+
+.content .content-wrapper .movie-card .details {
+  color: #ffffff !important;
+}
+
+.content .content-wrapper .movie-card .details .title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff11e;
+}
+
+.content .content-wrapper .movie-card .details .small-details {
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+.content .content-wrapper .movie-card .extra-details .release-date > p:first-child,
+.content .content-wrapper .movie-card .extra-details .runtime > p:first-child,
+.content .content-wrapper .movie-card .extra-details .booked > p:first-child {
+  font-size: .8rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff11e;
+}
+
+@media only screen and (max-width: 1340px) {
+  .content .content-wrapper .movie-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .content .content-wrapper .movie-card .poster {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

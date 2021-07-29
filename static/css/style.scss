@@ -4,14 +4,16 @@ $yellow: #fff11e;
 $black: #333333;
 $white: #ffffff;
 $blue: #45b0e6;
-
+*{
+    transition: 300ms !important;
+}
 *, html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif !important;
     border-radius: 0 !important;
-    transition: 300ms;
+    
 }
 html{
     font-size: 16px;
@@ -19,6 +21,7 @@ html{
 body{
     width: 100%;
     background-color: #333333;
+    color: white;
 }
 
 a, a:hover{
@@ -174,4 +177,78 @@ footer{
     background-image: linear-gradient(#fff01e00, $black);
     color: $white;
     height: 50px;
+}
+
+.content{
+    .content-wrapper{
+        .movie-card{
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            background-color: #9a9c92;
+            border-radius: 1rem !important;
+            box-shadow: 0 1px 50px -10px black;
+            overflow: hidden;
+            .poster{
+                height: inherit;
+                
+                width: 30%;
+                .poster-image{
+                    height: 100%;
+                    width: 100%;
+                    min-width: 300px;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .poster-overlay{
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    a{
+                        color: $white;
+                        font-size: 4rem;
+                    }
+                }
+            }
+            .details{
+                color: $white !important;
+                .title{
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    color: $yellow;
+                }
+                .small-details{
+                    font-weight: 700;
+                    font-size: .9rem;
+                }
+            }
+            .extra-details{
+                .release-date,
+                .runtime,
+                .booked  {
+                    &>p:first-child{
+                        font-size: .8rem;
+                        line-height: 1;
+                        font-weight: 700;
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width:1340px) {
+            .movie-card{
+                display: flex;
+                flex-direction: column !important;
+                .poster{
+                    display: none;
+                }
+            }
+        }
+    }
 }

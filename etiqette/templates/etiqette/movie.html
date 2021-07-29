@@ -1,0 +1,45 @@
+{% extends 'etiqette/base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+
+{% block content %}
+<main class="content">
+    <div class="content-wrapper">
+        <div class="movie-card mx-5 mt-5">
+            <div class="poster position-relative">
+                <div class="poster-image position-absolute">
+                    <img src="{% static 'img/backdrop1.jpg'%}" alt="" class="img-fluid">
+                </div>
+                <div class="poster-overlay position-absolute">
+                    <a href="#"><i class='bx bx-play-circle'></i></a>
+                </div>
+            </div>
+            <div class="details position-relative p-5">
+                <p class="title">The Awakening</p>
+                <p class="small-details">16 | Adventure | English | Imax3D</p>
+                <p class="description">Based on Disneyland's theme park ride where a small riverboat takes a group of
+                    travelers through a jungle filled with dangerous animals and reptiles but with a supernatural
+                    element.</p>
+
+                <div class="extra-details d-flex gap-5">
+                    <div class="release-date">
+                        <p>Release Date</p>
+                        <p><i class='bx bxs-calendar'></i> 30 Jul 2021</p>
+                    </div>
+                    <div class="runtime">
+                        <p>Runtime</p>
+                        <p><i class='bx bx-time-five'></i> 127 mins</p>
+                    </div>
+                    <div class="booked">
+                        <p>Booked</p>
+                        <p><i class='bx bxs-heart'></i> 1 ticket</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="dividing-line"></div>
+    </div>
+</main>
+{%endblock%}
