@@ -17,6 +17,8 @@ $blue: #45b0e6;
 }
 html{
     font-size: 16px;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
 }
 body{
     width: 100%;
@@ -186,6 +188,7 @@ footer{
         position: fixed;
         top: 0;
         z-index: -101;
+        mix-blend-mode: darken;
         img{
             height: 100%;
             width: 100%;
