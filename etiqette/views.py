@@ -21,7 +21,11 @@ def single_movie(request, movie_id):
 
 def single_cinema(request):
 
-    return render(request, 'etiqette/cinema.html')
+    movies = get_movies('now_playing')
+
+    context = {'movies':movies}
+
+    return render(request, 'etiqette/cinema.html', context)
 
 def book_ticket(request):
 

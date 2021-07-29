@@ -15,3 +15,8 @@ class Movie:
         self.original_language = original_language
         self.genre = genre
         self.trailer = trailer
+
+class Cinema(models.Model):
+    name = models.CharField(max_length=200, blank=True)
+    location = models.CharField(max_length=200, blank=True)
+

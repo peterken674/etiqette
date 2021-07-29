@@ -99,7 +99,8 @@ def process_results(movie_list):
         release_date_obj = datetime.strptime(release_date, '%Y-%m-%d')
 
         if poster_path:
-            movie_object = Movie(movie_id, adult, backdrop_path, overview, poster_path, title, vote_average, vote_count, release_date_obj, runtime, original_language, [], '')
+            poster_url = 'https://image.tmdb.org/t/p/w500'+poster_path
+            movie_object = Movie(movie_id, adult, backdrop_path, overview, poster_url, title, vote_average, vote_count, release_date_obj, runtime, original_language, [], '')
             movie_results.append(movie_object)
 
     return movie_results
