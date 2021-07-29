@@ -322,5 +322,40 @@ footer{
 }
 
 .ticket-card{
-    background-color: $yellow;
+    background-color: $black;
+    border-radius: 1rem !important;
+    box-shadow: 0 1px 50px -10px black;
+    *{
+        color: $yellow;
+    }
+    .btn{
+        background-color: transparent;
+        color: $yellow;
+        outline: none;
+        border: 1px solid $yellow;
+        margin-top: 2rem;
+        &:hover{
+            background-color: $yellow;
+            color: $black;
+        }
+    }
+    input[type=number]{
+        background-color: $black;
+        border: none;
+        outline: none;
+        position: relative;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button{
+            opacity: 1;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button{
+            -webkit-appearance: inner-spin-button !important;
+            width: 25px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+    }
 }

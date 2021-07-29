@@ -377,6 +377,46 @@ footer {
 }
 
 .ticket-card {
+  background-color: #333333;
+  border-radius: 1rem !important;
+  -webkit-box-shadow: 0 1px 50px -10px black;
+          box-shadow: 0 1px 50px -10px black;
+}
+
+.ticket-card * {
+  color: #fff11e;
+}
+
+.ticket-card .btn {
+  background-color: transparent;
+  color: #fff11e;
+  outline: none;
+  border: 1px solid #fff11e;
+  margin-top: 2rem;
+}
+
+.ticket-card .btn:hover {
   background-color: #fff11e;
+  color: #333333;
+}
+
+.ticket-card input[type=number] {
+  background-color: #333333;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.ticket-card input[type=number]::-webkit-outer-spin-button, .ticket-card input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+.ticket-card input[type=number]::-webkit-outer-spin-button, .ticket-card input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: inner-spin-button !important;
+  width: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */
