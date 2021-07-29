@@ -18,6 +18,9 @@ html{
     font-size: 16px;
     overflow-x: hidden !important;
     scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        width: 0 !important
+    }
 }
 body{
     width: 100%;
@@ -95,8 +98,8 @@ a, a:hover{
             
             p.title{
                 color: $white;
-                font-size: 3rem;
-                font-weight: 700;
+                font-size: 5rem;
+                font-weight: 800;
                 span{
                     color: $yellow;
                 }
@@ -118,6 +121,8 @@ a, a:hover{
 
 .movies{
     display: flex;
+    justify-content: center;
+    flex-grow: 1;
     gap: 1.5rem;
     margin: 2rem;
     flex-wrap: wrap;
