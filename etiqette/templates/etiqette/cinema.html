@@ -1,0 +1,73 @@
+{% extends 'etiqette/base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+
+{% block content %}
+<main class="content">
+    <div class="content-wrapper">
+        <div class="movie-card mx-5 mt-5">
+            <div class="poster position-relative">
+                <div class="poster-image position-absolute">
+                    <img src="{% static 'img/backdrop1.jpg'%}" alt="" class="img-fluid">
+                </div>
+                
+            </div>
+            <div class="details position-relative p-5">
+                <p class="title">Century Cinemax</p>
+                <p class="small-details">Garden City Mall</p>
+                <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed nostrum dolorem magni inventore excepturi temporibus, consequatur ullam veritatis sint perspiciatis beatae ipsam placeat aspernatur quam aut voluptatum provident est at.</p>
+
+                <div class="extra-details d-flex gap-5">
+                    <div class="release-date">
+                        <p>Rating</p>
+                        <p class="rating"><i class='bx bx-calendar-star'></i> 4.7</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="dividing-line m-5"></div>
+        <div class="cinemas mx-5">
+            <div class="cinemas-title">
+                <p>Movies Showing</p>
+            </div>
+            <div class="movies mx-5">
+                <div class="movie">
+                    <div class="single-movie">
+                        <div class="poster position-absolute">
+                            <img src="{% static 'img/backdrop2.jpg'%}" alt="" class="img-fluid">
+                        </div>
+                        <a class="overlay position-absolute" href="{% url 'movie'%}">
+                            7.5
+                        </a>
+                    </div>
+                    <div class="details">
+                        <p class="movie-title">The Awakening</p>
+                        <p class="small-details">16 | 107min | English | Imax 3D</p>
+                    </div>
+                </div>
+
+                <div class="movie">
+                    <div class="single-movie">
+                        <div class="poster position-absolute">
+                            <img src="{% static 'img/backdrop1.jpg'%}" alt="" class="img-fluid">
+                        </div>
+                        <a class="overlay position-absolute" href="#">
+                            8.6
+                        </a>
+                    </div>
+                    <div class="details">
+                        <p class="movie-title">Straightening</p>
+                        <p class="small-details">16 | 107min | English | Imax 3D</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="bg">
+        <img src="{% static 'img/backdrop.jpg'%}" alt="">
+    </div>
+</main>
+{%endblock%}

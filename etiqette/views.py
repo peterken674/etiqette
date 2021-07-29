@@ -7,3 +7,7 @@ def index(request):
 def single_movie(request):
 
     return render(request, 'etiqette/movie.html')
+
+def single_cinema(request):
+
+    return render(request, 'etiqette/cinema.html')

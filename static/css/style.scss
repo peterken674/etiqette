@@ -2,7 +2,7 @@
 
 $yellow: #fff11e;
 $black: #333333;
-$white: #ffffff;
+$white: #fff2f2;
 $blue: #45b0e6;
 *{
     transition: 300ms !important;
@@ -193,7 +193,7 @@ footer{
             height: 100%;
             width: 100%;
             object-fit: cover;
-            opacity: .1;
+            opacity: .05;
         }
     }
     .content-wrapper{
@@ -255,6 +255,14 @@ footer{
                         color: $yellow;
                     }
                 }
+                .rating{
+                    font-weight: 700;
+                    font-size: 3rem;
+                    line-height: 1;
+                    display: flex;
+                    color: $white;
+                    align-items: center;
+                }
             }
         }
 
@@ -278,7 +286,7 @@ footer{
                     border-radius: 1rem !important;
                     color: $white;
                     &:hover{
-                        background-color: #9a9c92;
+                        background-color: $black;
                         transform: scale(1.025);
                     }
                     &>*{
