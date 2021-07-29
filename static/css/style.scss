@@ -20,6 +20,10 @@ body{
     width: 100%;
     background-color: #333333;
 }
+
+a, a:hover{
+    text-decoration: none;
+}
 .navbar{
     background-color: $black !important;
     .navbar-brand {
@@ -121,7 +125,7 @@ body{
                 justify-content: center;
                 align-items: center;
                 margin-top: 0;
-                background-image: linear-gradient(#33333300, #333333);
+                background-color: #333333b4;
                 border: 3px solid $yellow;
            }
         }
