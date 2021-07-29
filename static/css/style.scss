@@ -12,7 +12,6 @@ $blue: #45b0e6;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif !important;
-    border-radius: 0 !important;
     
 }
 html{
@@ -44,12 +43,16 @@ a, a:hover{
         .btn{
             color: $yellow;
             outline: none;
+            border-radius: .5rem !important;
             border:.5px solid $yellow;
             &:active, &:hover{
                 background-color: $yellow;
                 color: $black;
                 outline: none;
             }
+        }
+        input{
+            border-radius: .5rem !important;
         }
     }
     a{
@@ -122,16 +125,22 @@ a, a:hover{
     .single-movie{
         height: 20rem;
         width: 15rem;
+        box-shadow: 0 1px 50px -10px black;
         overflow: hidden;
         margin: 0 auto;
         &:hover{
+            .poster{
+                img{
+                    transform: scale(1.05);
+                }
+            }
            .overlay{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin-top: 0;
                 background-color: #333333b4;
-                border: 3px solid $yellow;
+                border-bottom: 3px solid $yellow;
            }
         }
         
@@ -200,7 +209,6 @@ footer{
         .movie-card{
             display: flex;
             flex-direction: row;
-            gap: 1.5rem;
             background-color: #9a9c92;
             border-radius: 1rem !important;
             box-shadow: 0 1px 50px -10px black;
@@ -311,4 +319,8 @@ footer{
             }
         }
     }
+}
+
+.ticket-card{
+    background-color: $yellow;
 }

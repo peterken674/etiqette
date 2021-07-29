@@ -11,3 +11,7 @@ def single_movie(request):
 def single_cinema(request):
 
     return render(request, 'etiqette/cinema.html')
+
+def book_ticket(request):
+
+    return render(request, 'etiqette/book.html')

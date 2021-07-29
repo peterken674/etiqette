@@ -10,7 +10,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Open Sans', sans-serif !important;
-  border-radius: 0 !important;
 }
 
 html {
@@ -47,6 +46,7 @@ a, a:hover {
 .navbar .collapse .btn {
   color: #fff11e;
   outline: none;
+  border-radius: .5rem !important;
   border: 0.5px solid #fff11e;
 }
 
@@ -54,6 +54,10 @@ a, a:hover {
   background-color: #fff11e;
   color: #333333;
   outline: none;
+}
+
+.navbar .collapse input {
+  border-radius: .5rem !important;
 }
 
 .navbar a {
@@ -132,8 +136,15 @@ a, a:hover {
 .movies .single-movie {
   height: 20rem;
   width: 15rem;
+  -webkit-box-shadow: 0 1px 50px -10px black;
+          box-shadow: 0 1px 50px -10px black;
   overflow: hidden;
   margin: 0 auto;
+}
+
+.movies .single-movie:hover .poster img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .movies .single-movie:hover .overlay {
@@ -148,7 +159,7 @@ a, a:hover {
           align-items: center;
   margin-top: 0;
   background-color: #333333b4;
-  border: 3px solid #fff11e;
+  border-bottom: 3px solid #fff11e;
 }
 
 .movies .single-movie .poster {
@@ -225,7 +236,6 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 1.5rem;
   background-color: #9a9c92;
   border-radius: 1rem !important;
   -webkit-box-shadow: 0 1px 50px -10px black;
@@ -364,5 +374,9 @@ footer {
   .content .content-wrapper .movie-card .poster {
     display: none;
   }
+}
+
+.ticket-card {
+  background-color: #fff11e;
 }
 /*# sourceMappingURL=style.css.map */
