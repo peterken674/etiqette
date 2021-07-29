@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import Movie
+from . import models
 from django.conf import Settings, settings
 from datetime import date, datetime
 
@@ -64,7 +64,7 @@ def get_movie(movie_id):
 
             release_date_obj = datetime.strptime(release_date, '%Y-%m-%d')
 
-            movie_object = Movie(movie_id, adult, backdrop_path, overview, poster_path, title, vote_average, vote_count, release_date_obj, runtime, language, genre, trailer_url)
+            movie_object = models.Movie(movie_id, adult, backdrop_path, overview, poster_path, title, vote_average, vote_count, release_date_obj, runtime, language, genre, trailer_url)
 
                 
 
@@ -100,7 +100,7 @@ def process_results(movie_list):
 
         if poster_path:
             poster_url = 'https://image.tmdb.org/t/p/w500'+poster_path
-            movie_object = Movie(movie_id, adult, backdrop_path, overview, poster_url, title, vote_average, vote_count, release_date_obj, runtime, original_language, [], '')
+            movie_object = models.Movie(movie_id, adult, backdrop_path, overview, poster_url, title, vote_average, vote_count, release_date_obj, runtime, original_language, [], '')
             movie_results.append(movie_object)
 
     return movie_results

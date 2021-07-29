@@ -1,6 +1,9 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+from .request import get_movie
 
 class Movie:
     def __init__(self, movie_id, adult, backdrop_path, overview, poster_path, title, vote_average, vote_count, release_date, runtime, original_language, genre, trailer):
@@ -22,7 +25,7 @@ class Cinema(models.Model):
     name = models.CharField(max_length=200, blank=True)
     description = models.TextField()
     location = models.CharField(max_length=200, blank=True)
-    rating = models.PositiveIntegerField(null=True)
+    rating = models.FloatField()
     image = CloudinaryField('images')
 
     def __str__(self) -> str:
@@ -32,12 +35,22 @@ class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     profile_picture = CloudinaryField('images', default='image/upload/v1626430054/default_zogkvr.png')
 
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+
     def __str__(self) -> str:
         return self.user.username
 
 class Session(models.Model):
     name = models.CharField(max_length=50, blank=True)
     start_time = models.DateTimeField(null=False)
+    movie_id = models.PositiveIntegerField()
+
+    @property
+    def movie(self):
+        return get_movie(self.movie_id)
 
     def __str__(self) -> str:
         return self.name
@@ -51,4 +64,8 @@ class Ticket(models.Model):
 
     def __str__(self) -> str:
         return self.ticket_number
+
+    @property
+    def movie(self):
+        return get_movie(self.movie_id)
 

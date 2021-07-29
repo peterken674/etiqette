@@ -17,20 +17,20 @@
     </div>
     <p class="movies-section mx-5 pb-5">Now Showing</p>
     <div class="movies mx-5">
-        {%for movie in movies%}
+        {%for session in sessions %}
         <div class="movie">
             <div class="single-movie">
                 <div class="poster position-absolute">
-                    <img src="{{movie.poster_path}}" alt="" class="img-fluid">
+                    <img src="https://image.tmdb.org/t/p/w500{{session.movie.poster_path}}" alt="" class="img-fluid">
                 </div>
-                <a class="overlay position-absolute" href="{% url 'movie' movie_id=movie.movie_id %}">
-                    {{movie.vote_average}}
+                <a class="overlay position-absolute" href="{% url 'movie' movie_id=session.movie.movie_id %}">
+                    {{session.movie.vote_average}}
                 </a>
             </div>
             <div class="details">
-                <p class="movie-title">{{movie.title | truncatechars:24}}</p>
-                <p class="small-details">{% if adult %}Adult{%else%}GE{%endif%} | {{movie.runtime}}min |
-                    {{movie.original_language}} | Imax 3D</p>
+                <p class="movie-title">{{session.movie.title | truncatechars:24}}</p>
+                <p class="small-details">{% if adult %}Adult{%else%}GE{%endif%} | {{session.movie.runtime}}min |
+                    {{session.movie.original_language}} | Imax 3D</p>
             </div>
         </div>
         {%endfor%}

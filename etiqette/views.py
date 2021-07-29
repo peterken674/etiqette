@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from .request import get_movies, get_movie
 from django.conf import settings
+from . import models
 
 def index(request):
 
-    movies = get_movies('now_playing')
+    sessions = models.Session.objects.all()
 
-    context = {'movies':movies}
+    context = {'sessions':sessions}
 
     return render(request, 'etiqette/index.html', context)
 
