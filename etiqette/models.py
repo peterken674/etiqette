@@ -47,6 +47,7 @@ class Session(models.Model):
     name = models.CharField(max_length=50, blank=True)
     start_time = models.DateTimeField(null=False)
     movie_id = models.PositiveIntegerField()
+    cost = models.PositiveIntegerField(default=500)
 
     cinema = models.ForeignKey(Cinema, on_delete=models.CASCADE)
 
