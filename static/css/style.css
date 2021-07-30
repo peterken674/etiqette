@@ -429,4 +429,26 @@ footer {
   right: 0;
   height: 100%;
 }
+
+#login .card, #register .card {
+  background-color: #333333;
+}
+
+#login .card .profile-header, #register .card .profile-header {
+  font-size: 2rem;
+}
+
+#login .card .btn, #register .card .btn {
+  background-color: #fff11e;
+  color: #333333;
+  outline: none;
+  border: 1px solid #fff11e;
+  border-radius: .3rem;
+}
+
+#login .card .input, #register .card .input {
+  border-radius: .3rem;
+  outline: none;
+  border: none;
+}
 /*# sourceMappingURL=style.css.map */

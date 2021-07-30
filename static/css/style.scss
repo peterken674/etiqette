@@ -364,3 +364,24 @@ footer{
         }
     }
 }
+
+#login, #register{
+    .card{
+        background-color: $black;
+        .profile-header{
+            font-size: 2rem;
+        }
+        .btn{
+            background-color: $yellow;
+            color: $black;
+            outline: none;
+            border: 1px solid $yellow;
+            border-radius: .3rem;
+        }
+        .input{
+            border-radius: .3rem;
+            outline: none;
+            border: none;
+        }
+    }
+}
