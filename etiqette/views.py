@@ -32,11 +32,16 @@ def single_movie(request, session_id):
 
     return render(request, 'etiqette/movie.html', context)
 
-def single_cinema(request):
+def single_cinema(request, cinema_id):
+    cinema = models.Cinema.objects.get(id=cinema_id)
+    sessions = models.Session.objects.filter(cinema=cinema)
+    movies = []
 
-    movies = get_movies('now_playing')
-
-    context = {'movies':movies}
+    context = {
+        'movies': movies,
+        'cinema': cinema,
+        'sessions':sessions
+        }
 
     return render(request, 'etiqette/cinema.html', context)
 

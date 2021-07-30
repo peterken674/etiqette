@@ -19,7 +19,7 @@
                     <a class="nav-link" aria-current="page" href="#">Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url 'cinema'%}">Cinemas</a>
+                    <a class="nav-link" aria-current="page" href="{% url 'cinema' cinema_id=1 %}">Cinemas</a>
                 </li>
                 <li class="nav-item dropdown">
                     {% if user.is_authenticated %}
