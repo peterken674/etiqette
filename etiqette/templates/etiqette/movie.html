@@ -9,25 +9,25 @@
         <div class="movie-card mx-5 mt-5">
             <div class="poster position-relative">
                 <div class="poster-image position-absolute">
-                    <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="" class="img-fluid">
+                    <img src="https://image.tmdb.org/t/p/w500{{session.movie.poster_path}}" alt="" class="img-fluid">
                 </div>
                 <div class="poster-overlay position-absolute">
-                    <a href="{{movie.trailer}}"><i class='bx bx-play-circle'></i></a>
+                    <a href="{{session.movie.trailer}}"><i class='bx bx-play-circle'></i></a>
                 </div>
             </div>
             <div class="details position-relative p-5">
-                <p class="title">{{movie.title}}</p>
-                <p class="small-details">{% if adult %}Adult{%else%}GE{%endif%} | {{movie.genre}} | {{movie.original_language}} | Imax3D</p>
-                <p class="description">{{movie.overview}}</p>
+                <p class="title">{{session.movie.title}}</p>
+                <p class="small-details">{% if adult %}Adult{%else%}GE{%endif%} | {{session.movie.genre}} | {{session.movie.original_language}} | Imax3D</p>
+                <p class="description">{{session.movie.overview}}</p>
 
                 <div class="extra-details d-flex gap-5">
                     <div class="release-date">
                         <p>Release Date</p>
-                        <p><i class='bx bxs-calendar'></i> {{movie.release_date|date}}</p>
+                        <p><i class='bx bxs-calendar'></i> {{session.movie.release_date|date}}</p>
                     </div>
                     <div class="runtime">
                         <p>Runtime</p>
-                        <p><i class='bx bx-time-five'></i> {{movie.runtime}} mins</p>
+                        <p><i class='bx bx-time-five'></i> {{session.movie.runtime}} mins</p>
                     </div>
                     <div class="booked">
                         <p>Booked</p>
@@ -43,45 +43,26 @@
                 <p>Cinemas Showing</p>
             </div>
             <div class="cinemas-list">
+                {% for cinema in cinemas %}
                 <div class="cinema mt-5">
                     <div class="cinema-name">
-                        <p>Century Cinemax, Garden City Mall</p>
+                        <p>{{cinema.name}}, {{cinema.location}}</p>
                     </div>
                     <div class="cinema-shows d-flex gap-5">
+                        {% for sesh in sessions %}
+                        {% if sesh.cinema.id == cinema.id %}
                         <a href="{% url 'book' %}" class="show p-2 py-4">
-                            <p class="showtime">11:30 AM</p>
-                            <p class="showtype">Imax(IMAX3D)</p>
-                            <p class="showdate">Jul 29, 2021</p>
+                            <p class="showtime">{{ sesh.start_time | time:'G:i'}}H</p>
+                            <p class="showtype">{{cinema.name}}(IMAX3D)</p>
+                            <p class="showdate">{{ sesh.start_time | date}}</p>
                         </a>
-                        
-                        <a href="{% url 'book' %}" class="show p-2 py-4">
-                            <p class="showtime">11:30 AM</p>
-                            <p class="showtype">Imax(IMAX3D)</p>
-                            <p class="showdate">Jul 29, 2021</p>
-                        </a>
+                        {%endif%}
+                        {%endfor%}
                         
                     </div>
                 </div>
-
-                <div class="cinema mt-5">
-                    <div class="cinema-name">
-                        <p>Century Cinemax, Garden City Mall</p>
-                    </div>
-                    <div class="cinema-shows d-flex gap-5">
-                        <a href="{% url 'book' %}" class="show p-2 py-4">
-                            <p class="showtime">11:30 AM</p>
-                            <p class="showtype">Imax(IMAX3D)</p>
-                            <p class="showdate">Jul 29, 2021</p>
-                        </a>
-                        
-                        <a href="{% url 'book' %}" class="show p-2 py-4">
-                            <p class="showtime">11:30 AM</p>
-                            <p class="showtype">Imax(IMAX3D)</p>
-                            <p class="showdate">Jul 29, 2021</p>
-                        </a>
-                        
-                    </div>
-                </div>
+                {%endfor%}
+                
             </div>
         </div>
     </div>

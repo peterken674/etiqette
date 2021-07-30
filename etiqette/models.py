@@ -48,6 +48,8 @@ class Session(models.Model):
     start_time = models.DateTimeField(null=False)
     movie_id = models.PositiveIntegerField()
 
+    cinema = models.ForeignKey(Cinema, on_delete=models.CASCADE)
+
     @property
     def movie(self):
         return get_movie(self.movie_id)

@@ -11,11 +11,15 @@ def index(request):
 
     return render(request, 'etiqette/index.html', context)
 
-def single_movie(request, movie_id):
+def single_movie(request, session_id):
 
-    movie = get_movie(movie_id)
+    session = models.Session.objects.get(id=session_id)
+    cinemas = models.Cinema.objects.all()
+    sessions = models.Session.objects.filter(movie_id=session.movie_id)
     context = {
-        'movie':movie
+        'session':session,
+        'cinemas':cinemas,
+        'sessions':sessions,
     }
 
     return render(request, 'etiqette/movie.html', context)
