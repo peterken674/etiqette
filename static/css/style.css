@@ -451,4 +451,9 @@ footer {
   outline: none;
   border: none;
 }
+
+#login .card a, #register .card a {
+  color: #fff11e;
+  text-decoration: underline;
+}
 /*# sourceMappingURL=style.css.map */

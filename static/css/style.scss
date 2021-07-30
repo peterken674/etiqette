@@ -383,5 +383,9 @@ footer{
             outline: none;
             border: none;
         }
+        a{
+            color: $yellow;
+            text-decoration: underline;
+        }
     }
 }
