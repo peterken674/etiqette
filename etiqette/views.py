@@ -23,7 +23,7 @@ def single_movie(request, session_id):
 
     session = models.Session.objects.get(id=session_id)
     cinemas = models.Cinema.objects.all()
-    sessions = models.Session.objects.filter(movie_id=session.movie_id).all()
+    sessions = []
     context = {
         'session':session,
         'cinemas':cinemas,
@@ -34,7 +34,7 @@ def single_movie(request, session_id):
 
 def single_cinema(request, cinema_id):
     cinema = models.Cinema.objects.get(id=cinema_id)
-    sessions = models.Session.objects.filter(cinema=cinema).all()
+    sessions = []
     movies = []
 
     context = {
