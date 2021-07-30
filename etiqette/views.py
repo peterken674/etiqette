@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .forms import CreateUserForm
+from . email import send_welcome_email
 
 def index(request):
 
@@ -75,10 +76,14 @@ def register_user(request):
         if request.method == 'POST':
             form = CreateUserForm(request.POST)
             if form.is_valid():
+                name = form.cleaned_data['first_name']
+                email = form.cleaned_data['email']
                 form.save()
+
+                send_welcome_email(name,email)
                 return redirect('login')
 
-    context = {'form': form, 'title': title}
+    context = {'r_form': form, 'title': title}
     return render(request, 'auth/register.html', context)
 
 def login_user(request):

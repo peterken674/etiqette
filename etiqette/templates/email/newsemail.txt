@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to the Etiqette. We bring you the best of the movies, tell you where you can watch them, and allow you to book a seat! Isn't it amazing?
