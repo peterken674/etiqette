@@ -4,7 +4,7 @@ $(document).ready(function(){
         let newValue = $(this).val();
         let numSeats = parseInt(newValue);
 
-        let cost = 300;
+        const cost = 500;
 
         let totalCost = numSeats*cost;
 

@@ -8,6 +8,7 @@
     <div class="content-wrapper">
         <div class="ticket-card mx-5 mt-5 p-5">
             <form action="" method="post" id="checkoutForm">
+                {% csrf_token %}
             <table class="table w-100">
                 <thead>
                     <tr>
@@ -19,20 +20,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>IMAX (Early Morning)</td>
-                        <td>300 KES</td>
+                        <th scope="row">{{new_ticket.ticket_number}}</th>
+                        <td>{{ session.cinema.name }}</td>
+                        <td>{{ session.cost }} KES</td>
                         <td><input type="number" name="noTickets" id="noTickets" value="1" min="1" max="9"></td>
                     </tr>
                     <tr>
                         <th scope="row"></th>
                         <th>Total</th>
-                        <th><span id="totalCost">300</span> KES</th>
+                        <th><span id="totalCost">{{ session.cost }}</span> KES</th>
                         <th><span id="totalSeats">1</span></th>
                     </tr>
                 </tbody>
             </table>
-            <a class="btn btn-primary btn-sm text-uppercase" href="#" role="button">Check out </a>
+            <button class="btn btn-primary btn-sm text-uppercase" type="submit" role="button">Check out </button>
             </form>
         </div>
         <div class="dividing-line m-5"></div>

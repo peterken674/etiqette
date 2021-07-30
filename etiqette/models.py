@@ -61,6 +61,8 @@ class Session(models.Model):
 class Ticket(models.Model):
     ticket_number = models.CharField(max_length=10)
     movie_id = models.PositiveIntegerField()
+    num_of_seats = models.PositiveIntegerField(null=True)
+
     user = models.ForeignKey(Profile, related_name='tickets', on_delete=models.CASCADE)
     session = models.ForeignKey(Session, related_name='tickets', on_delete=models.CASCADE)
     cinema = models.ForeignKey(Cinema, related_name='tickets', on_delete=models.CASCADE)

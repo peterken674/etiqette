@@ -51,7 +51,7 @@
                     <div class="cinema-shows d-flex gap-5">
                         {% for sesh in sessions %}
                         {% if sesh.cinema.id == cinema.id %}
-                        <a href="{% url 'book' %}" class="show p-2 py-4">
+                        <a href="{% url 'book' session_id=sesh.id %}" class="show p-2 py-4">
                             <p class="showtime">{{ sesh.start_time | time:'G:i'}}H</p>
                             <p class="showtype">{{cinema.name}}(IMAX3D)</p>
                             <p class="showdate">{{ sesh.start_time | date}}</p>
