@@ -35,7 +35,7 @@ SECRET_KEY = config('SECRET_KEY')
 MODE=config("MODE", default="dev")
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['neighborh00d.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['etiqette.herokuapp.com','127.0.0.1']
 
 # Application definition
 
