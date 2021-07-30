@@ -1,3 +1,4 @@
+from django.dispatch.dispatcher import receiver
 from django.shortcuts import render, redirect
 from .my_request import get_movies, get_movie
 from django.conf import settings
@@ -8,7 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .forms import CreateUserForm
-from . email import send_welcome_email
+from . email import send_welcome_email, send_ticket_email
 
 def index(request):
 
@@ -48,6 +49,17 @@ def book_ticket(request, session_id):
         new_ticket = models.Ticket(ticket_number=generate_ticket_num(), movie_id=session.movie.movie_id, num_of_seats=num_tickets, user=request.user.profile, session=session, cinema=session.cinema)
 
         new_ticket.save()
+
+        name = request.user.first_name.capitalize()
+        receiver = request.user.email
+        ticket = new_ticket.ticket_number
+        num_seats = int(num_tickets)
+        movie = get_movie(new_ticket.movie_id)
+
+        cost = int(new_ticket.session.cost) * num_seats
+
+        send_ticket_email(name, receiver, ticket, num_seats, cost, session, movie)
+
 
         return redirect('index')
 

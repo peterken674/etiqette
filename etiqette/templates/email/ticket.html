@@ -1,0 +1,14 @@
+<p>Hello {{name}},</p>
+
+<p>Your ticket was successfuly bought. Here is your ticket info: <br>
+<strong> Ticket Number:</strong> #{{ticket}} <br>
+<strong> Movie:</strong> {{movie.title}} <br>
+<strong>Number of seats:</strong> {{num_seats}} seat{{num_seats | pluralize}}<br>
+<strong>Cost Per Seat:</strong> KES {{session.cost}} <br>
+<strong>Cinema:</strong> {{session.cinema.name}} <br>
+<strong>Location:</strong> {{session.cinema.location}} <br>
+<strong>Time:</strong> {{session.start_time | date}} {{session.start_time | time}} <br>
+<hr>
+<strong style="font-size: 1.2em;">Total Cost: KES {{cost}} </strong>
+
+</p>

@@ -1,0 +1,3 @@
+Hello {{name}},
+
+Your ticket was successfuly bought. Tour ticket number is #{{ticket}}, and for a total of {{num_seats}} seats, you will pay KES {{cost}}
