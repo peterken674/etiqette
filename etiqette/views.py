@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .request import get_movies, get_movie
+from .my_request import get_movies, get_movie
 from django.conf import settings
 from . import models
 import string
